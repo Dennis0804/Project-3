@@ -29,6 +29,9 @@ const MyCourse = (props) => {
                     <Menu.Item key="3" icon={ <UploadOutlined /> }>
                         <Link to='/mycourse/test'>My Test</Link>
                     </Menu.Item>
+                    <Menu.Item key="4" icon>
+                        <Link to='/mycourse/assignment'>My Assignment</Link>
+                    </Menu.Item>
                 </Menu>
             </Sider>
             <Layout>

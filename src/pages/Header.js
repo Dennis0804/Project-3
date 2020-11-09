@@ -8,7 +8,7 @@ class Header extends React.Component {
         <header>
             <nav>
                 <NavLink  exact to='/'>My PTE</NavLink>
-                <NavLink  to='/mycourse'>个人中心</NavLink>
+                <NavLink  to='/mycourse'>Profile</NavLink>
             </nav>
         </header>
     )

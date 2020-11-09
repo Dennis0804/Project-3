@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { Layout, Menu } from 'antd';
-import {Route, Link, Redirect} from 'react-router-dom'
+import { Route, Link, Redirect } from 'react-router-dom'
 import { UploadOutlined, UserOutlined, VideoCameraOutlined } from '@ant-design/icons';
 const { Sider, Content } = Layout;
 
@@ -21,13 +21,13 @@ const MyCourse = (props) => {
             >
                 <Menu theme="dark" mode="inline" defaultSelectedKeys={ ['1'] }>
                     <Menu.Item key="1" icon={ <UserOutlined /> }>
-                        <Link to='/mycourse/user'>个人信息</Link>
+                        <Link to='/mycourse/user'>Profile</Link>
                     </Menu.Item>
                     <Menu.Item key="2" icon={ <VideoCameraOutlined /> }>
-                        <Link to='/mycourse/course'>我的课程</Link>
+                        <Link to='/mycourse/course'>My Course</Link>
                     </Menu.Item>
                     <Menu.Item key="3" icon={ <UploadOutlined /> }>
-                        <Link to='/mycourse/test'>我的测验</Link>
+                        <Link to='/mycourse/test'>My Test</Link>
                     </Menu.Item>
                 </Menu>
             </Sider>

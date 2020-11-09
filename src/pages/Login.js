@@ -7,7 +7,7 @@ const Login = (props) => {
     }
     return (
         <div>
-            <button onClick={login}>登录</button>
+            <button onClick={login}>Login</button>
         </div>
     )
 }

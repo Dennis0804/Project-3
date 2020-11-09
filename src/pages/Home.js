@@ -2,13 +2,13 @@ import React from "react";
 import { Card, Avatar, Col, Row, Button } from "antd";
 import { useHistory } from "react-router-dom";
 const { Meta } = Card;
-const arr = new Array(20).fill("");
+const arr = new Array(12).fill("");
 
 const Home = () => {
   const history = useHistory();
   return (
     <div style={{ padding: "20px 100px" }}>
-      <Row gutter={20}>
+      <Row gutter={12}>
         {arr.map((item, idx) => (
           <Col key={idx} span={6}>
             <Card
@@ -23,7 +23,7 @@ const Home = () => {
                       history.push("/payment");
                     }}
                   >
-                    购买课程
+                    Buy Course
                   </Button>
                 }
               />

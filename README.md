@@ -1,2 +1,3 @@
 前端UI - 匠人project 3
-Change some information
+1.Change some information
+2.Add videos, file classification, responsive design

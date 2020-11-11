@@ -1,21 +1,31 @@
 import React from "react";
 import { Card, Col, Row, Button } from "antd";
 import { useHistory } from "react-router-dom";
-const { Meta } = Card;
-const arr = new Array(12).fill("");
 
-const Home = () => {
+import "./mycourse.less";
+const { Meta } = Card;
+const arr = new Array(6).fill("");
+
+const MyCourse = () => {
   const history = useHistory();
+
   return (
-    <div style={{ padding: "20px 100px" }}>
+    <>
       <Row gutter={12}>
         {arr.map((item, index) => (
-          <Col key={index} lg={6} md={8} sm={12} xs={24}>
+          <Col
+            style={{ marginBottom: 10 }}
+            key={index}
+            lg={6}
+            md={8}
+            sm={12}
+            xs={24}
+          >
             <Card
               cover={
                 <img
                   alt="example"
-                  src={require("../../assets/images/PTE-Course.png")}
+                  src={require("../../../../assets/images/PTE-Course.png")}
                 />
               }
             >
@@ -25,10 +35,10 @@ const Home = () => {
                   <Button
                     danger
                     onClick={() => {
-                      history.push("/pay");
+                      history.push("/video");
                     }}
                   >
-                    Buy Course
+                    Start Learning
                   </Button>
                 }
               />
@@ -36,8 +46,8 @@ const Home = () => {
           </Col>
         ))}
       </Row>
-    </div>
+    </>
   );
 };
 
-export default Home;
+export default MyCourse;

@@ -1,12 +1,11 @@
-import React, { useEffect } from "react";
-import { Layout, Menu } from "antd";
+import React from 'react'
 
-const Profile = (props) => {
-  return (
-    <div>
 
-    </div>
-  );
-};
+const Profile = () => {
+    return (
+      <div>Profile</div>
+    )
+}
 
 export default Profile;
+

@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Layout, Menu } from 'antd';
 import {Route, Link, Redirect} from 'react-router-dom'
-import MyCourse from './components/MyCourse';
+import MyCourse from './components/myCourse';
+import Profile from './components/Profile';
 const { Sider, Content } = Layout;
 
 const Con = (props)=>{
@@ -19,7 +20,7 @@ const Personal = (props) => {
                 breakpoint="lg"
                 collapsedWidth="0"
             >
-                <Menu theme="dark" mode="inline" defaultSelectedKeys={ ['2'] }>
+                <Menu theme="dark" mode="inline" defaultSelectedKeys={ ['1'] }>
                     <Menu.Item key="1">
                         <Link to='/personal/profile'>Profile</Link>
                     </Menu.Item>
@@ -40,9 +41,10 @@ const Personal = (props) => {
             <Layout>
                 <Content style={ { margin: '10px 16px 0' } }>
                     <div className="site-layout-background">
+                        <Route path='/personal/profile' component={Profile}/>
                         <Route path='/personal/mycourse' component={MyCourse}/>
-                        <Route path='/personal/:item' component={Con}/>
-                        <Redirect to='/personal/mycourse'/>
+                        {/* <Route path='/personal/:item' component={Con}/> */}
+                        <Redirect to='/personal/profile'/>
                     </div>
                 </Content>
             </Layout>

@@ -11,7 +11,7 @@ const MyCourse = () => {
 
   return (
     <>
-      <Row gutter={12}>
+      <Row gutter={20}>
         {arr.map((item, index) => (
           <Col
             style={{ marginBottom: 10 }}

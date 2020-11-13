@@ -8,15 +8,12 @@ const Home = () => {
   const history = useHistory();
   return (
     <div style={{ padding: "20px 100px" }}>
-      <Row gutter={12}>
+      <Row gutter={20}>
         {arr.map((item, index) => (
           <Col key={index} lg={6} md={8} sm={12} xs={24}>
             <Card
               cover={
-                <img
-                  alt="example"
-                  src={require("../../assets/images/PTE-Course.png")}
-                />
+                <img alt="example" src={require("../../assets/images/PTE-Course.png")} />
               }
             >
               <Meta

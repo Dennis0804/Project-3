@@ -13,18 +13,21 @@ class Header extends Component {
       isLogin: localStorage.getItem("isLogin"),
     };
   }
+
   showModal = () => {
     this.setState({
       visible: true,
       registerVisible: false,
     });
   };
+
   handleCancel = (e) => {
     this.setState({
       visible: false,
       registerVisible: false,
     });
   };
+  
   login = () => {
     this.setState({
       visible: false,
@@ -32,18 +35,21 @@ class Header extends Component {
     });
     localStorage.setItem("isLogin", true);
   };
+
   logout = () => {
     this.setState({
       isLogin: false,
     });
     localStorage.setItem("isLogin", "");
   };
+
   register = () => {
     this.setState({
       visible: false,
       registerVisible: true,
     });
   };
+
   render() {
     return (
       <header>
@@ -54,14 +60,14 @@ class Header extends Component {
           {this.state.isLogin ? (
             <span>
               <NavLink to="/personal">Profile</NavLink>
-              <div onClick={this.logout} className="login">
+              <span onClick={this.logout} className="login">
                 Logout
-              </div>
+              </span>
             </span>
           ) : (
-            <div onClick={this.showModal} className="login">
+            <span onClick={this.showModal} className="login">
               Login
-            </div>
+            </span>
           )}
         </nav>
         <LoginModal

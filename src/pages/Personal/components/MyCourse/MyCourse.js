@@ -2,7 +2,7 @@ import React from 'react'
 import { Card, Avatar, Col, Row, Button } from 'antd';
 import { useHistory } from 'react-router-dom'
 
-import './mycourse.less'
+import './myCourse.less'
 const { Meta } = Card;
 const arr = new Array(6).fill('');
 

@@ -1,7 +1,29 @@
 .video{
-    video{
-        display: block;
-        margin: 20px auto;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    .left{
         width: 60%;
+        margin-right: 30px;
+        video{
+            width: 100%;
+        }
+        p{
+            text-align: center;
+            Button{
+                margin: 20px 20px 0;
+            }
+        }
+        
+    }
+    .contentList{
+        font-size: 18px;
+        li{
+            cursor: pointer;
+            list-style-position: inside;
+            &:hover{
+                background-color: #ccc;
+            }
+        }
     }
 }

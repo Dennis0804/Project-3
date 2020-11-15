@@ -8,48 +8,58 @@ class RegisterModal extends Component {
     const { visible, handleCancel, showModal } = this.props;
     return (
       <Modal
-        title={<h3>Register</h3>}
-        width={350}
-        visible={visible}
-        footer={null}
-        onCancel={handleCancel}
+        title={ <h3>Register</h3> }
+        width={ 350 }
+        visible={ visible }
+        footer={ null }
+        onCancel={ handleCancel }
       >
         <Form
           name="normal_login"
           className="login-form"
-          initialValues={{ remember: true }}
-          onFinish={showModal}
+          initialValues={ { remember: true } }
+          onFinish={ showModal }
         >
           <Form.Item
             name="email"
-            rules={[
+            rules={ [
               { required: true, message: "Please input your Email!" },
               { type: "email" },
-            ]}
+            ] }
           >
             <Input
-              prefix={<FolderOpenOutlined className="site-form-item-icon" />}
+              prefix={ <FolderOpenOutlined className="site-form-item-icon" /> }
               placeholder="Email"
             />
           </Form.Item>
           <Form.Item
             name="password"
-            rules={[{ required: true, message: "Please input your Password!" }]}
+            rules={ [{ required: true, message: "Please input your Password!" }] }
           >
             <Input
-              prefix={<LockOutlined className="site-form-item-icon" />}
+              prefix={ <LockOutlined className="site-form-item-icon" /> }
               type="password"
               placeholder="Password"
             />
           </Form.Item>
           <Form.Item
             name="passwordAgain"
-            rules={[
+            dependencies={ ['password'] }
+            rules={ [
               { required: true, message: "Please input your Password again!" },
-            ]}
+              ({ getFieldValue }) => ({
+                validator(rule, value) {
+                  if (!value || getFieldValue('password') === value) {
+                    return Promise.resolve();
+                  }
+                  return Promise.reject('The two passwords that you entered do not match!');
+                },
+              }),
+            ] }
+
           >
             <Input
-              prefix={<LockOutlined className="site-form-item-icon" />}
+              prefix={ <LockOutlined className="site-form-item-icon" /> }
               type="password"
               placeholder="Password again"
             />
@@ -64,7 +74,7 @@ class RegisterModal extends Component {
               Register
             </Button>
             <div className="registerText">Already have an account?</div>
-            <Button onClick={showModal}> Login Now!</Button>
+            <Button onClick={ showModal }> Login Now!</Button>
           </Form.Item>
         </Form>
       </Modal>
